@@ -1,0 +1,44 @@
+{
+  "name": "yunik1004_blog",
+  "version": "1.0.0",
+  "description": "My Blog",
+  "main": "index.js",
+  "scripts": {
+    "dev": "./node_modules/.bin/parcel src/index.html",
+    "build": "./node_modules/.bin/parcel build src/index.html --no-source-maps -d build",
+    "clean": "rimraf .cache/ & rimraf dist/ & rimraf build/",
+    "lint": "./node_modules/.bin/tslint -p ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yunik1004/Blog.git"
+  },
+  "keywords": [],
+  "author": "yunik1004 <inkyuhak@gmail.com>",
+  "license": "UNLICENSED",
+  "private": true,
+  "bugs": {
+    "url": "https://github.com/yunik1004/Blog/issues"
+  },
+  "homepage": "https://github.com/yunik1004/Blog#readme",
+  "devDependencies": {
+    "@vue/component-compiler-utils": "^2.6.0",
+    "parcel": "^1.12.2",
+    "parcel-bundler": "^1.12.2",
+    "rimraf": "^2.6.3",
+    "tslint": "^5.14.0",
+    "tslint-config-standard": "^8.0.1",
+    "typescript": "^3.3.3333",
+    "vue-hot-reload-api": "^2.3.3",
+    "vue-template-compiler": "^2.6.9"
+  },
+  "dependencies": {
+    "vue": "^2.6.9",
+    "vue-class-component": "^7.0.1",
+    "vue-property-decorator": "^8.0.0",
+    "vue-router": "^3.0.2"
+  },
+  "alias": {
+    "vue": "./node_modules/vue/dist/vue.js"
+  }
+}
