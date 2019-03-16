@@ -1,18 +1,14 @@
 import Vue from 'vue'
-import HelloComponent from './components/Hello.vue'
+import Vuetify from 'vuetify'
+import App from './App.vue'
+import router from './router'
+import store from './store'
 
-const a = new Vue({
-  el: '#app',
-  template: `
-    <div>
-      Name: <input type="text" v-model="name">
-      <hello-component :name="name" :initialEnthusiasm="5" />
-    </div>
-  `,
-  data: {
-    name: 'World'
-  },
-  components: {
-    HelloComponent
-  }
-})
+Vue.use(Vuetify)
+import 'vuetify/dist/vuetify.min.css'
+
+new Vue({
+  router,
+  store,
+  render: (h) => h(App)
+}).$mount('#app')
