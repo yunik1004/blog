@@ -41,6 +41,6 @@
     "vuex": "^3.1.0"
   },
   "alias": {
-    "vue": "./node_modules/vue/dist/vue.js"
+    "vue": "./node_modules/vue/dist/vue.common.js"
   }
 }
