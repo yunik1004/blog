@@ -1,32 +1,23 @@
 <template>
-  <div id='app' class='Site'>
-    <v-container class='Site-content'>
-      <v-layout column>
-        <v-flex>
-          <Sign/>
-        </v-flex>
-        <v-flex>
-          <Menu/>
-        </v-flex>
-        <v-flex>
-          <router-view/>
-        </v-flex>
-      </v-layout>
-    </v-container>
-    <Footer/>
-  </div>
+<v-app class='Site'>
+    <Toolbar></Toolbar>
+
+    <Content class='Site-content'></Content>
+    
+    <Footer></Footer>
+  </v-app>
 </template>
 
 <script lang='ts'>
-import Sign from './components/Sign.vue'
-import Menu from './components/Menu.vue'
-import Footer from './components/Footer.vue'
+import Toolbar from '~components/core/Toolbar.vue'
+import Content from '~components/core/Content.vue'
+import Footer from '~components/core/Footer.vue'
 
 export default {
   name: 'App',
   components: {
-    Sign,
-    Menu,
+    Toolbar,
+    Content,
     Footer
   }
 }
