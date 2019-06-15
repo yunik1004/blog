@@ -24,6 +24,8 @@ export default {
 </script>
 
 <style lang='stylus'>
+@import '~assets/css/app.styl'
+
 .Site {
   display: flex
   min-height: 100vh
