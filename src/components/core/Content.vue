@@ -5,3 +5,7 @@
     </v-container>
   </v-content>
 </template>
+
+<script lang='ts'>
+export default {}
+</script>

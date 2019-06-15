@@ -5,3 +5,7 @@
     </v-toolbar-title>
   </v-toolbar>
 </template>
+
+<script lang='ts'>
+export default {}
+</script>
