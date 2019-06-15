@@ -2,7 +2,7 @@
   "name": "yunik1004_blog",
   "version": "1.0.0",
   "description": "My Blog",
-  "main": "index.js",
+  "main": "index.html",
   "scripts": {
     "dev": "./node_modules/.bin/parcel src/index.html",
     "build": "./node_modules/.bin/parcel build src/index.html --no-source-maps",
@@ -26,6 +26,7 @@
     "parcel": "^1.12.3",
     "parcel-bundler": "^1.12.3",
     "rimraf": "^2.6.3",
+    "stylus": "^0.54.5",
     "tslint": "^5.17.0",
     "tslint-config-standard": "^8.0.1",
     "typescript": "^3.5.2",
