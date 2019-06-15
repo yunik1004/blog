@@ -1,0 +1,35 @@
+os:
+  - linux
+
+dist: xenial
+
+language: node_js
+
+node_js:
+  - node
+
+cache:
+  directories:
+    - node_modules
+
+sudo: required
+
+before_install:
+ - sudo apt-get update
+
+install:
+  - npm install
+  - npm update
+
+script:
+  # Test
+  - npm run lint
+
+after_success:
+  # Deploy to master branch
+  - npm run build
+  - cd dist
+  - git init
+  - git add .
+  - git -c user.name='travis' -c user.email='travis' commit -m "Travis deploy"
+  - git push -f -q https://yunik1004:$GITHUB_API_KEY@github.com/yunik1004/yunik1004.github.io.git master &>/dev/null
