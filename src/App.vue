@@ -1,5 +1,5 @@
 <template>
-<v-app class='Site'>
+  <v-app class='Site'>
     <Toolbar></Toolbar>
 
     <Content class='Site-content'></Content>

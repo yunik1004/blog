@@ -1,5 +1,5 @@
 <template>
-  <v-footer app height='auto'>
+  <v-footer dark height='auto'>
     <v-container mx-auto>
       <v-layout wrap>
         <v-flex text-xs-center>

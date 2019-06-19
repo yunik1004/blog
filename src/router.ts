@@ -1,7 +1,5 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Home from './views/Home.vue'
-import Error404 from './views/404.vue'
 
 Vue.use(Router)
 
@@ -11,12 +9,22 @@ export default new Router({
     {
       path: '/',
       name: 'Home',
-      component: Home
+      component: () => import('~views/Home.vue')
+    },
+    {
+      path: '/article',
+      name: 'Article',
+      component: () => import('~views/Article.vue')
+    },
+    {
+      path: '/project',
+      name: 'Project',
+      component: () => import('~views/Project.vue')
     },
     {
       path: '*',
       name: '404',
-      component: Error404
+      component: () => import('~views/404.vue')
     }
   ]
 })
