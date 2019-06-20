@@ -17,6 +17,11 @@ export default new Router({
       component: () => import('~views/Article.vue')
     },
     {
+      path: '/article/:id',
+      name: 'ArticleItem',
+      component: () => import('~views/ArticleItem.vue')
+    },
+    {
       path: '/project',
       name: 'Project',
       component: () => import('~views/Project.vue')
