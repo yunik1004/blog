@@ -1,6 +1,9 @@
 <template>
   <div>
-    <h1>Hello world</h1>
+    <h1>{{name}}</h1>
+    <div>
+      <div v-html='HTMLcontent'></div>
+    </div>
   </div>
 </template>
 
@@ -8,15 +11,31 @@
 import DB from '~data/db/article'
 import { DataDB, findDB } from '~data/tools'
 
-let article: DataDB | null
+let article: DataDB
 
 export default {
-  created () {
-    article = findDB(DB, Number(this.$route.params.id))
-    if (article == null) {
-      // redirect to 404 page
+  data () {
+    return {
+      name: '',
+      HTMLcontent: '<p>Wow</p>'
     }
-    console.log(article)
+  },
+  created () {
+    let articleN: DataDB | null = findDB(DB, Number(this.$route.params.id))
+    if (articleN == null) {
+      // redirect to 404 page
+      this.$router.push({ name: '404' })
+      return
+    }
+
+    article = articleN
+    this.name = article.name as string
+
+    let that = this
+
+    article.data().then(function (data) {
+      that.HTMLcontent = data.default as unknown as string
+    })
   }
 }
 </script>

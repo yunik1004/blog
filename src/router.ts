@@ -27,7 +27,8 @@ export default new Router({
       component: () => import('~views/Project.vue')
     },
     {
-      path: '*',
+      path: '/404',
+      alias: '*',
       name: '404',
       component: () => import('~views/404.vue')
     }

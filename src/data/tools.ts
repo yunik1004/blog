@@ -1,10 +1,11 @@
 export type DataDB = {
   id: Number,
   name: String,
-  data: () => Promise<{
-    default: typeof import('*.md')
-    content: string
-  }>
+  data: () => Promise<typeof import('*.md')>
+}
+
+export function DBDataToString (data: typeof import('*.md')): String  {
+  return ''
 }
 
 export function findDB (db: Array<DataDB>, id: Number): DataDB | null {
