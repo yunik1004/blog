@@ -1,13 +1,18 @@
 <template>
   <div>
-    <h2>Articles</h2>
     <v-list>
-      <template v-for='item in db'>
+      <template v-for='(item, index) in db'>
         <v-list-tile :key='item.id' @click='onClick(item.id)'>
           <v-list-tile-content>
             <v-list-tile-title v-text='item.name'></v-list-tile-title>
           </v-list-tile-content>
+
+          <v-list-tile-action>
+            <v-list-tile-action-text v-text='item.date'></v-list-tile-action-text>
+          </v-list-tile-action>
         </v-list-tile>
+
+        <v-divider v-if='index + 1 < db.length' :key='index'></v-divider>
       </template>
     </v-list>
   </div>

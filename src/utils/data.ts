@@ -1,6 +1,7 @@
 export type DataDB = {
   id: Number,
   name: String,
+  date: String,
   data: () => Promise<typeof import('*.md')>
 }
 

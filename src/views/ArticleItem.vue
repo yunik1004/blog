@@ -1,7 +1,11 @@
 <template>
   <section>
     <article>
-      <h1>{{name}}</h1>
+      <h1 class='name'>{{name}}</h1>
+      <p class='date'>{{date}}</p>
+
+      <v-divider class='py-1'></v-divider>
+
       <div v-html='HTMLcontent'></div>
     </article>
   </section>
@@ -16,6 +20,7 @@ export default {
   data () {
     return {
       name: '',
+      date: '',
       HTMLcontent: ''
     }
   },
@@ -29,6 +34,7 @@ export default {
 
     let article: DataDB = articleN
     this.name = article.name as string
+    this.date = article.date as string
 
     let that = this
 
@@ -40,3 +46,15 @@ export default {
   }
 }
 </script>
+
+<style lang='stylus' scoped>
+.name {
+  font-size: 20px
+}
+
+.date {
+  text-align: right
+  color: #9e9e9e
+  font-size: 12px
+}
+</style>

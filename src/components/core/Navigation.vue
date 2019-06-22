@@ -16,6 +16,12 @@ export default {}
 </script>
 
 <style lang='stylus' scoped>
+a {
+  &:hover {
+    color: green
+  }
+}
+
 .Menu {
   border-bottom: 1px solid
 }
