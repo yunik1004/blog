@@ -4,7 +4,7 @@ export type DataDB = {
   data: () => Promise<typeof import('*.md')>
 }
 
-export function DBDataToString (data: typeof import('*.md')): String  {
+export function DBDataToString (data: typeof import('*.md')): String {
   return ''
 }
 

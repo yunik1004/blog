@@ -1,23 +1,19 @@
 <template>
   <div>
     <h1>{{name}}</h1>
-    <div>
-      <div v-html='HTMLcontent'></div>
-    </div>
+    <div v-html='HTMLcontent'></div>
   </div>
 </template>
 
 <script lang='ts'>
 import DB from '~data/db/article'
-import { DataDB, findDB } from '~data/tools'
-
-let article: DataDB
+import { DataDB, findDB } from '~utils/data'
 
 export default {
   data () {
     return {
       name: '',
-      HTMLcontent: '<p>Wow</p>'
+      HTMLcontent: ''
     }
   },
   created () {
@@ -28,7 +24,7 @@ export default {
       return
     }
 
-    article = articleN
+    let article: DataDB = articleN
     this.name = article.name as string
 
     let that = this

@@ -22,24 +22,27 @@
   },
   "homepage": "https://github.com/yunik1004/Blog#readme",
   "devDependencies": {
+    "@types/node": "^12.0.10",
+    "@types/prismjs": "^1.16.0",
     "@vue/component-compiler-utils": "^3.0.0",
     "marked": "^0.6.2",
     "parcel": "^1.12.3",
     "parcel-bundler": "^1.12.3",
     "rimraf": "^2.6.3",
     "stylus": "^0.54.5",
-    "tslint": "^5.17.0",
+    "tslint": "^5.18.0",
     "tslint-config-standard": "^8.0.1",
     "typescript": "^3.5.2",
     "vue-hot-reload-api": "^2.3.3",
     "vue-template-compiler": "^2.6.10"
   },
   "dependencies": {
+    "prismjs": "^1.16.0",
     "vue": "^2.6.10",
     "vue-class-component": "^7.1.0",
-    "vue-property-decorator": "^8.1.1",
+    "vue-property-decorator": "^8.2.1",
     "vue-router": "^3.0.6",
-    "vuetify": "^1.5.14",
+    "vuetify": "^1.5.16",
     "vuex": "^3.1.1"
   },
   "alias": {

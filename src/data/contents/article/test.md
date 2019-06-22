@@ -2,12 +2,10 @@
 
 ### nice to meet you
 
-```python
+```c
+#include <stdio.h>
 
-b = 1
-c = 3
-
-a = b + c
-
-input('wow')
+int main(void) {
+    return 0;
+}
 ```

@@ -1,4 +1,4 @@
-import { DataDB } from '~data/tools'
+import { DataDB } from '~utils/data'
 
 const db: Array<DataDB> = [
   {
