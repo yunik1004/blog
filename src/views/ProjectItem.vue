@@ -5,7 +5,7 @@
 </template>
 
 <script lang='ts'>
-import DB from '~data/db/article'
+import DB from '~data/db/project'
 import ItemArticle from '~components/template/ItemArticle.vue'
 
 export default {
