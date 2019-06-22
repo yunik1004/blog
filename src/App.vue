@@ -9,7 +9,6 @@
 </template>
 
 <script lang='ts'>
-import '~utils/prismjs'
 import Toolbar from '~components/core/Toolbar.vue'
 import Content from '~components/core/Content.vue'
 import Footer from '~components/core/Footer.vue'

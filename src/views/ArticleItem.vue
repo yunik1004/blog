@@ -6,6 +6,7 @@
 </template>
 
 <script lang='ts'>
+import Prism from '~utils/prismjs'
 import DB from '~data/db/article'
 import { DataDB, findDB } from '~utils/data'
 
@@ -31,6 +32,8 @@ export default {
 
     article.data().then(function (data) {
       that.HTMLcontent = data.default as unknown as string
+    }).finally(function () {
+      Prism.highlightAll()
     })
   }
 }
