@@ -1,8 +1,10 @@
 <template>
-  <div>
-    <h1>{{name}}</h1>
-    <div v-html='HTMLcontent'></div>
-  </div>
+  <section>
+    <article>
+      <h1>{{name}}</h1>
+      <div v-html='HTMLcontent'></div>
+    </article>
+  </section>
 </template>
 
 <script lang='ts'>

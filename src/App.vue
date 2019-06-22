@@ -1,6 +1,8 @@
 <template>
-  <v-app class='Site'>
-    <Toolbar></Toolbar>
+  <v-app class='Site white'>
+    <Header></Header>
+
+    <Navigation></Navigation>
 
     <Content class='Site-content'></Content>
     
@@ -9,14 +11,16 @@
 </template>
 
 <script lang='ts'>
-import Toolbar from '~components/core/Toolbar.vue'
+import Header from '~components/core/Header.vue'
+import Navigation from '~components/core/Navigation.vue'
 import Content from '~components/core/Content.vue'
 import Footer from '~components/core/Footer.vue'
 
 export default {
   name: 'App',
   components: {
-    Toolbar,
+    Header,
+    Navigation,
     Content,
     Footer
   }

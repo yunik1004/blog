@@ -1,11 +1,13 @@
 <template>
-  <v-content>
+  <header>
     <v-container>
       <v-flex>
-        <router-view :key='$route.fullPath'></router-view>
+        <h1>
+          <router-link :to='{ name: "Home" }'>Yunik Media Lab</router-link>
+        </h1>
       </v-flex>
     </v-container>
-  </v-content>
+  </header>
 </template>
 
 <script lang='ts'>
