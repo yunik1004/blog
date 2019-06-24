@@ -1,7 +1,7 @@
 <template>
   <v-container grid-list-xl>
     <v-layout wrap>
-      <PhotoCard v-for='(item, i) in db' :value='item' :hrefbase='hrefbase' :key='i'></PhotoCard>
+      <PhotoCard v-for='(item, i) in db' :value='item' :routeName='routeName' :key='i'></PhotoCard>
     </v-layout>
   </v-container>
 </template>
@@ -10,7 +10,7 @@
 import PhotoCard from '~components/gallery/PhotoCard.vue'
 
 export default {
-  props: ['db', 'hrefbase'],
+  props: ['db', 'routeName'],
   components: {
     PhotoCard
   }

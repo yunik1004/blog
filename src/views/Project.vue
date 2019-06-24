@@ -1,6 +1,6 @@
 <template>
   <div>
-    <Gallery :db='db' :hrefbase='hrefbase'></Gallery>
+    <Gallery :db='db' routeName='ProjectItem'></Gallery>
   </div>
 </template>
 
@@ -12,11 +12,6 @@ export default {
   data () {
     return {
       db: DB
-    }
-  },
-  computed: {
-    hrefbase: function () {
-      return window.location.href.split('?')[0]
     }
   },
   components: {

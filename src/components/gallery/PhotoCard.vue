@@ -1,33 +1,30 @@
 <template>
   <v-flex xs12 class='xl2 lg3 md4 sm6 xs12'>
     <div ref='vcard'>
-      <v-card tile flat color='grey lighten-1' dark :href='hreflink' :height='height'>
-        <v-img :src='imgsrc' height='100%' gradient='rgba(0, 0, 0, .42), rgba(0, 0, 0, .42)'>
-          <v-layout fill-height wrap text-xs-right ma-0>
-            <v-flex xs12>
-              <h3 class="title font-weight-bold mb-2">
-                {{ value.name }}
-              </h3>
-            </v-flex>
-          </v-layout>
-        </v-img>
-      </v-card>
+      <router-link :to='{ name: routeName, params: { id: this.value.id } }'>
+        <v-card tile flat color='grey lighten-1' dark :height='height'>
+          <v-img :src='imgsrc' height='100%' gradient='rgba(0, 0, 0, .42), rgba(0, 0, 0, .42)'>
+            <v-layout fill-height wrap text-xs-right ma-0>
+              <v-flex xs12>
+                <h3 class="title font-weight-bold mb-2">
+                  {{ value.name }}
+                </h3>
+              </v-flex>
+            </v-layout>
+          </v-img>
+        </v-card>
+      </router-link>
     </div>
   </v-flex>
 </template>
 
 <script lang='ts'>
 export default {
-  props: ['value', 'hrefbase'],
+  props: ['value', 'routeName'],
   data () {
     return {
-      height: 200,
+      height: 0,
       imgsrc: ''
-    }
-  },
-  computed: {
-    hreflink: function () {
-      return this.hrefbase + '/' + this.value.id.toString()
     }
   },
   created () {
