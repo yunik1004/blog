@@ -5,13 +5,17 @@
 
     <v-divider class='py-1'></v-divider>
 
-    <div v-html='HTMLcontent'></div>
+    <div v-html='HTMLcontent' id='mdContent'></div>
   </article>
 </template>
 
 <script lang='ts'>
+import 'katex/dist/contrib/auto-render'
+import 'katex/dist/katex.min.css'
 import Prism from '~utils/prismjs'
 import { DataDB, findDB } from '~utils/data'
+import { render } from 'katex';
+import renderMathInElement from 'katex/dist/contrib/auto-render';
 
 export default {
   props: ['db'],
@@ -38,7 +42,16 @@ export default {
 
     item.data().then(function (data) {
       that.HTMLcontent = data.default as unknown as string
+      //console.log(katex.renderToString(that.HTMLcontent))
     }).finally(function () {
+      let mdContent = document.getElementById('mdContent')
+      if (mdContent) {
+        renderMathInElement(mdContent, {
+          delimiters: [
+            { left: '$$', right: '$$', display: true }
+          ]
+        })
+      }
       Prism.highlightAll()
     })
   }

@@ -22,10 +22,11 @@
   },
   "homepage": "https://github.com/yunik1004/Blog#readme",
   "devDependencies": {
-    "@types/node": "^12.0.10",
+    "@types/katex": "^0.10.1",
+    "@types/node": "^12.0.12",
     "@types/prismjs": "^1.16.0",
     "@vue/component-compiler-utils": "^3.0.0",
-    "marked": "^0.6.2",
+    "marked": "^0.7.0",
     "parcel": "^1.12.3",
     "parcel-bundler": "^1.12.3",
     "rimraf": "^2.6.3",
@@ -37,11 +38,12 @@
     "vue-template-compiler": "^2.6.10"
   },
   "dependencies": {
+    "katex": "^0.10.2",
     "prismjs": "^1.16.0",
     "vue": "^2.6.10",
     "vue-class-component": "^7.1.0",
     "vue-property-decorator": "^8.2.1",
-    "vue-router": "^3.0.6",
+    "vue-router": "^3.0.7",
     "vuetify": "^1.5.16",
     "vuex": "^3.1.1"
   },
