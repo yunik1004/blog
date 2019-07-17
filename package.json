@@ -23,7 +23,7 @@
   "homepage": "https://github.com/yunik1004/Blog#readme",
   "devDependencies": {
     "@types/katex": "^0.10.1",
-    "@types/node": "^12.0.12",
+    "@types/node": "^12.6.6",
     "@types/prismjs": "^1.16.0",
     "@vue/component-compiler-utils": "^3.0.0",
     "marked": "^0.7.0",
@@ -33,7 +33,7 @@
     "stylus": "^0.54.5",
     "tslint": "^5.18.0",
     "tslint-config-standard": "^8.0.1",
-    "typescript": "^3.5.2",
+    "typescript": "^3.5.3",
     "vue-hot-reload-api": "^2.3.3",
     "vue-template-compiler": "^2.6.10"
   },
