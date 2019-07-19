@@ -27,7 +27,6 @@
     "@types/prismjs": "^1.16.0",
     "@vue/component-compiler-utils": "^3.0.0",
     "marked": "^0.7.0",
-    "parcel": "^1.12.3",
     "parcel-bundler": "^1.12.3",
     "rimraf": "^2.6.3",
     "stylus": "^0.54.5",
