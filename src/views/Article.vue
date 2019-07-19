@@ -19,23 +19,23 @@
 </template>
 
 <script lang='ts'>
+import Vue from 'vue'
+import { Component } from 'vue-property-decorator'
 import DB from '~data/db/article'
 
-export default {
-  data () {
-    return {
-      db: DB
-    }
-  },
-  methods: {
-    onClick: function (itemId: Number) {
-      this.$router.push({
-        name: 'ArticleItem',
-        params: {
-          id: itemId.toString()
-        }
-      })
-    }
+@Component
+export default class Article extends Vue {
+  // data
+  db: Array<any> = DB
+
+  // methods
+  onClick (itemId: Number): void {
+    this.$router.push({
+      name: 'ArticleItem',
+      params: {
+        id: itemId.toString()
+      }
+    })
   }
 }
 </script>

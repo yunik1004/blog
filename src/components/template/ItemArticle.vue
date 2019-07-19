@@ -10,6 +10,8 @@
 </template>
 
 <script lang='ts'>
+import Vue from 'vue'
+import { Component, Prop } from 'vue-property-decorator'
 import 'katex/dist/contrib/auto-render'
 import 'katex/dist/katex.min.css'
 import Prism from '~utils/prismjs'
@@ -17,15 +19,16 @@ import { DataDB, findDB } from '~utils/data'
 import { render } from 'katex';
 import renderMathInElement from 'katex/dist/contrib/auto-render';
 
-export default {
-  props: ['db'],
-  data () {
-    return {
-      name: '',
-      date: '',
-      HTMLcontent: ''
-    }
-  },
+@Component
+export default class ItemArticle extends Vue {
+  @Prop() db!: Array<any>
+
+  // data
+  name: string = ''
+  date: string = ''
+  HTMLcontent: string = ''
+  
+  // Lifecycle hooks
   created () {
     let itemN: DataDB | null = findDB(this.db, Number(this.$route.params.id))
     if (itemN == null) {

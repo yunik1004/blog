@@ -11,11 +11,14 @@
 </template>
 
 <script lang='ts'>
-export default {
-  computed: {
-    currentYear () {
-      return new Date().getUTCFullYear()
-    }
+import Vue from 'vue'
+import { Component } from 'vue-property-decorator'
+
+@Component
+export default class Footer extends Vue {
+  // computed
+  get currentYear (): number {
+    return new Date().getUTCFullYear()
   }
 }
 </script>

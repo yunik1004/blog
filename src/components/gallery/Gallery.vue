@@ -7,12 +7,17 @@
 </template>
 
 <script lang='ts'>
+import Vue from 'vue'
+import { Component, Prop } from 'vue-property-decorator'
 import PhotoCard from '~components/gallery/PhotoCard.vue'
 
-export default {
-  props: ['db', 'routeName'],
+@Component({
   components: {
     PhotoCard
   }
+})
+export default class Gallery extends Vue {
+  @Prop() readonly db!: Array<any>
+  @Prop() readonly routeName!: string
 }
 </script>

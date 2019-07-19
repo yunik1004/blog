@@ -11,20 +11,22 @@
 </template>
 
 <script lang='ts'>
+import Vue from 'vue'
+import { Component } from 'vue-property-decorator'
 import Header from '~components/core/Header.vue'
 import Navigation from '~components/core/Navigation.vue'
 import Content from '~components/core/Content.vue'
 import Footer from '~components/core/Footer.vue'
 
-export default {
-  name: 'App',
+@Component({
   components: {
     Header,
     Navigation,
     Content,
     Footer
   }
-}
+})
+export default class App extends Vue {}
 </script>
 
 <style lang='stylus'>

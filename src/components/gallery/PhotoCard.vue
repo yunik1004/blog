@@ -1,7 +1,7 @@
 <template>
   <v-flex xs12 class='xl2 lg3 md4 sm6 xs12'>
     <div ref='vcard'>
-      <router-link :to='{ name: routeName, params: { id: this.value.id } }'>
+      <router-link :to='{ name: routeName, params: { id: value.id } }'>
         <v-card tile flat color='grey lighten-1' dark :height='height'>
           <v-img :src='imgsrc' height='100%' gradient='rgba(0, 0, 0, .42), rgba(0, 0, 0, .42)'>
             <v-layout fill-height wrap text-xs-right ma-0>
@@ -19,35 +19,44 @@
 </template>
 
 <script lang='ts'>
-export default {
-  props: ['value', 'routeName'],
-  data () {
-    return {
-      height: 0,
-      imgsrc: ''
-    }
-  },
+import Vue from 'vue'
+import { Component, Prop } from 'vue-property-decorator'
+
+@Component
+export default class PhotoCard extends Vue {
+  // props
+  @Prop() readonly value: any
+  @Prop() readonly routeName!: string
+
+  // data
+  height: number = 0
+  imgsrc: string = ''
+
+  // methods
+  winChangeHandler (e: UIEvent): void {
+    this.winChangeHandlerFunc()
+  }
+
+  winChangeHandlerFunc (): void {
+    const vcardElement = this.$refs.vcard as HTMLElement
+    this.height = vcardElement.clientWidth * 0.7
+  }
+
+  // Lifecycle hooks
   created () {
     let that = this
     this.value.thumbnail().then(function (data: any) {
       that.imgsrc = data.default as unknown as string
     })
-  },
+  }
+
   mounted () {
     this.winChangeHandlerFunc()
     window.addEventListener('resize', this.winChangeHandler)
-  },
+  }
+
   destroyed () {
     window.removeEventListener('resize', this.winChangeHandler)
-  },
-  methods: {
-    winChangeHandler (e: UIEvent) {
-      this.winChangeHandlerFunc()
-    },
-    winChangeHandlerFunc () {
-      const vcardElement = this.$refs.vcard as HTMLElement
-      this.height = vcardElement.clientWidth * 0.7
-    }
   }
 }
 </script>
