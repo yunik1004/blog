@@ -13,23 +13,35 @@ export default new Router({
     },
     {
       path: '/article',
-      name: 'Article',
-      component: () => import('~views/Article.vue')
-    },
-    {
-      path: '/article/:id',
-      name: 'ArticleItem',
-      component: () => import('~views/ArticleItem.vue')
+      component: () => import('~components/base/BaseArticle.vue'),
+      children: [
+        {
+          path: '',
+          name: 'Article',
+          component: () => import('~views/Article.vue')
+        },
+        {
+          path: ':id',
+          name: 'ArticleItem',
+          component: () => import('~views/ArticleItem.vue')
+        }
+      ]
     },
     {
       path: '/project',
-      name: 'Project',
-      component: () => import('~views/Project.vue')
-    },
-    {
-      path: '/project/:id',
-      name: 'ProjectItem',
-      component: () => import('~views/ProjectItem.vue')
+      component: () => import('~components/base/BaseProject.vue'),
+      children: [
+        {
+          path: '',
+          name: 'Project',
+          component: () => import('~views/Project.vue')
+        },
+        {
+          path: ':id',
+          name: 'ProjectItem',
+          component: () => import('~views/ProjectItem.vue')
+        }
+      ]
     },
     {
       path: '/404',
