@@ -8,6 +8,7 @@
 import Vue from 'vue'
 import { Component } from 'vue-property-decorator'
 import DB from '~data/db/article'
+import { DataDB } from '~utils/data'
 import ItemArticle from '~components/template/ItemArticle.vue'
 
 @Component({
@@ -17,6 +18,6 @@ import ItemArticle from '~components/template/ItemArticle.vue'
 })
 export default class ArticleItem extends Vue {
   // data
-  db: Array<any> = DB
+  db: Array<DataDB> = DB
 }
 </script>

@@ -22,11 +22,12 @@
 import Vue from 'vue'
 import { Component } from 'vue-property-decorator'
 import DB from '~data/db/article'
+import { DataDB } from '~utils/data'
 
 @Component
 export default class Article extends Vue {
   // data
-  db: Array<any> = DB
+  db: Array<DataDB> = DB
 
   // methods
   onClick (itemId: Number): void {
