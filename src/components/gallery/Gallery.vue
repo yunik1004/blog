@@ -9,6 +9,7 @@
 <script lang='ts'>
 import Vue from 'vue'
 import { Component, Prop } from 'vue-property-decorator'
+import { DataDB } from '~utils/data'
 import PhotoCard from '~components/gallery/PhotoCard.vue'
 
 @Component({
@@ -17,7 +18,7 @@ import PhotoCard from '~components/gallery/PhotoCard.vue'
   }
 })
 export default class Gallery extends Vue {
-  @Prop() readonly db!: Array<any>
+  @Prop() readonly db!: Array<DataDB>
   @Prop() readonly routeName!: string
 }
 </script>

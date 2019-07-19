@@ -14,14 +14,14 @@ import Vue from 'vue'
 import { Component, Prop } from 'vue-property-decorator'
 import 'katex/dist/contrib/auto-render'
 import 'katex/dist/katex.min.css'
+import { render } from 'katex'
+import renderMathInElement from 'katex/dist/contrib/auto-render'
 import Prism from '~utils/prismjs'
 import { DataDB, findDB } from '~utils/data'
-import { render } from 'katex';
-import renderMathInElement from 'katex/dist/contrib/auto-render';
 
 @Component
 export default class ItemArticle extends Vue {
-  @Prop() db!: Array<any>
+  @Prop() readonly db!: Array<DataDB>
 
   // data
   name: string = ''

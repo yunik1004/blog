@@ -21,11 +21,12 @@
 <script lang='ts'>
 import Vue from 'vue'
 import { Component, Prop } from 'vue-property-decorator'
+import { DataDB } from '~utils/data'
 
 @Component
 export default class PhotoCard extends Vue {
   // props
-  @Prop() readonly value: any
+  @Prop() readonly value!: DataDB
   @Prop() readonly routeName!: string
 
   // data
@@ -45,9 +46,11 @@ export default class PhotoCard extends Vue {
   // Lifecycle hooks
   created () {
     let that = this
-    this.value.thumbnail().then(function (data: any) {
-      that.imgsrc = data.default as unknown as string
-    })
+    if (this.value.thumbnail != null) {
+      this.value.thumbnail().then(function (data: any) {
+        that.imgsrc = data.default as unknown as string
+      })
+    }
   }
 
   mounted () {
