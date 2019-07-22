@@ -4,7 +4,11 @@ import App from '~App.vue'
 import router from '~router'
 import store from '~store'
 
-Vue.use(Vuetify)
+import 'material-design-icons-iconfont/dist/material-design-icons.css'
+
+Vue.use(Vuetify, {
+  iconfont: 'md'
+})
 import 'vuetify/dist/vuetify.min.css'
 
 new Vue({

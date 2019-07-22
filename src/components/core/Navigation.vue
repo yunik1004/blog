@@ -1,12 +1,14 @@
 <template>
   <nav>
     <v-container class='py-2'>
-      <v-flex class='Menu'>
-        <p>
-          <router-link class='Menu-Item' :to='{ name: "Article" }'>Articles</router-link>
-          <router-link class='Menu-Item' :to='{ name: "Project" }'>Projects</router-link>
-        </p>
-      </v-flex>
+      <v-layout wrap>
+        <v-flex class='Menu'>
+          <p>
+            <router-link class='Menu-Item' :to='{ name: "Article" }'>Articles</router-link>
+            <router-link class='Menu-Item' :to='{ name: "Project" }'>Projects</router-link>
+          </p>
+        </v-flex>
+      </v-layout>
     </v-container>
   </nav>
 </template>

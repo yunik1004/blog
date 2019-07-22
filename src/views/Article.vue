@@ -21,13 +21,16 @@
 <script lang='ts'>
 import Vue from 'vue'
 import { Component } from 'vue-property-decorator'
+import { isEqual } from 'lodash'
 import DB from '~data/db/article'
+import ArticleCategory from '~data/category/article'
 import { DataDB } from '~utils/data'
+import {findCategory } from '~utils/category'
 
 @Component
 export default class Article extends Vue {
   // data
-  db: Array<DataDB> = DB
+  db: Array<DataDB> = []
 
   // methods
   onClick (itemId: Number): void {
@@ -37,6 +40,28 @@ export default class Article extends Vue {
         id: itemId.toString()
       }
     })
+  }
+
+  // Lifecycle hooks
+  created () {
+    const catID = this.$route.query.id
+    if (typeof catID != 'number') {
+      this.db = DB
+      return
+    }
+
+    const res = findCategory(ArticleCategory, catID)
+    const passed = DB.filter(elem => {
+      if (elem.category.length < res.length) {
+        return false
+      }
+      if (isEqual(res, elem.category.slice(0, res.length))) {
+        return true
+      }
+      
+      return false
+    })
+    this.db = passed
   }
 }
 </script>

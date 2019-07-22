@@ -1,9 +1,11 @@
 <template>
   <v-content>
-    <v-container>
-      <v-flex>
-        <router-view :key='$route.fullPath'></router-view>
-      </v-flex>
+    <v-container grid-list-md>
+      <v-layout wrap>
+        <v-flex>
+          <router-view :key='$route.fullPath'></router-view>
+        </v-flex>
+      </v-layout>
     </v-container>
   </v-content>
 </template>

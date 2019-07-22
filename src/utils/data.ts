@@ -2,6 +2,7 @@ export type DataDB = {
   id: Number,
   name: String,
   date: String,
+  category: Array<String>,
   thumbnail: (() => Promise<any>) | null
   data: () => Promise<typeof import('*.md')>
 }

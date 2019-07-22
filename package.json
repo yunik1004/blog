@@ -23,6 +23,7 @@
   "homepage": "https://github.com/yunik1004/Blog#readme",
   "devDependencies": {
     "@types/katex": "^0.10.1",
+    "@types/lodash": "^4.14.136",
     "@types/node": "^12.6.6",
     "@types/prismjs": "^1.16.0",
     "@vue/component-compiler-utils": "^3.0.0",
@@ -38,6 +39,8 @@
   },
   "dependencies": {
     "katex": "^0.10.2",
+    "lodash": "^4.17.15",
+    "material-design-icons-iconfont": "^5.0.1",
     "prismjs": "^1.16.0",
     "vue": "^2.6.10",
     "vue-class-component": "^7.1.0",

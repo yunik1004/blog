@@ -1,11 +1,13 @@
 <template>
   <header>
     <v-container>
-      <v-flex>
-        <h1>
-          <router-link :to='{ name: "Home" }'>Yunik Media Lab</router-link>
-        </h1>
-      </v-flex>
+      <v-layout wrap>
+        <v-flex>
+          <h1>
+            <router-link :to='{ name: "Home" }'>Yunik Media Lab</router-link>
+          </h1>
+        </v-flex>
+      </v-layout>
     </v-container>
   </header>
 </template>
