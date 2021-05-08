@@ -39,7 +39,7 @@
   },
   "dependencies": {
     "katex": "^0.10.2",
-    "lodash": "^4.17.15",
+    "lodash": "^4.17.21",
     "material-design-icons-iconfont": "^5.0.1",
     "prismjs": "^1.16.0",
     "vue": "^2.6.10",
